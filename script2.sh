@@ -813,9 +813,9 @@ fi
 if [[ $MYMENU == *"nodenew"* ]]; then
     printstatus "Installing NodeJS and NodeRed"
 	
-##  bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+##  bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
    
-    curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered > update-nodejs-and-nodered
+    curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered > update-nodejs-and-nodered
     echo 143.204.15.127 deb.nodesource.com | sudo tee -a /etc/hosts
     chmod +x update-nodejs-and-nodered
     echo y | ./update-nodejs-and-nodered
@@ -1211,8 +1211,8 @@ fi
 if [[ $MYMENU == *"addindex"* ]]; then
     printstatus "Adding index page and CSS"
     if [ -d /var/www/html ]; then
- 		sudo wget -a $LOGFILE $AQUIET http://www.scargill.net/iot/index.html -O /var/www/html/index.html
-		sudo wget -a $LOGFILE $AQUIET http://www.scargill.net/iot/reset.css -O /var/www/html/reset.css
+ 		sudo wget -a $LOGFILE $AQUIET https://github.com/srtulon/raspberrypi-setup/blob/master/html/index.html -O /var/www/html/index.html
+		sudo wget -a $LOGFILE $AQUIET https://github.com/srtulon/raspberrypi-setup/blob/master/html/index_files/reset.css
     else
         printl "${IRed}!!!! Apache+PHP not installed! ${IWhite}\r\n"
     fi
