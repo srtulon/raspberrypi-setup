@@ -1211,8 +1211,8 @@ fi
 if [[ $MYMENU == *"addindex"* ]]; then
     printstatus "Adding index page and CSS"
     if [ -d /var/www/html ]; then
- 		sudo wget -a $LOGFILE $AQUIET https://github.com/srtulon/raspberrypi-setup/blob/master/html/index.html -O /var/www/html/index.html
-		sudo wget -a $LOGFILE $AQUIET https://github.com/srtulon/raspberrypi-setup/blob/master/html/index_files/reset.css
+ 		sudo wget -a $LOGFILE $AQUIET https://srtulon.github.io/raspberrypi-setup/html/index.html -O /var/www/html/index.html
+		sudo wget -a $LOGFILE $AQUIET https://srtulon.github.io/raspberrypi-setup/html/index_files/reset.css
     else
         printl "${IRed}!!!! Apache+PHP not installed! ${IWhite}\r\n"
     fi
